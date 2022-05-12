@@ -1,7 +1,5 @@
 #include "monty.h"
 
-char **a;
-
 /**
  * main - entry point
  * argc: number of arguments including program call
