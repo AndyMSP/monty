@@ -46,6 +46,12 @@ int main(int argc, char **argv)
 			break;
 	}
 
+	if (errno == ENOMEM)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		a[2] = "getline malloc failed";
+	}
+
 	free(line);
 	free_list(head);
 	fclose(stream);
