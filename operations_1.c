@@ -19,18 +19,18 @@ void op_push(stack_t **stack, unsigned int line_number)
 	{
 		if (strcmp(a[2], "not_int") == 0)
 		{
-			fprintf(stderr, "L%i: usage: push integer", line_number);
+			fprintf(stderr, "L%i: usage: push integer\n", line_number);
 			return;
 		}
 
-		if (strcmp(a[2], "test malloc failed") == 0)
+		if (strcmp(a[2], "test malloc failed\n") == 0)
 			return;
 	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		a[2] = "new malloc failed";
+		a[2] = "new malloc failed\n";
 		fprintf(stderr, "Error: malloc failed\n");
 		return;
 	}
