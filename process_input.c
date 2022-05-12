@@ -69,7 +69,6 @@ int get_int()
 	{
 		if((a[1][i] < 48 || a[1][i] > 57) && a[1][i] != '-')
 		{
-			printf("not int check failed\n");
 			a[2] = "not_int";
 			break;
 		}
