@@ -100,10 +100,13 @@ void op_bad(stack_t **stack, unsigned int line_number)
 void op_pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head;
+	int length;
 
 	head = *stack;
 
-	if ((head) == NULL)
+	length = get_length(head);
+
+	if (length < 1)
 	{
 		fprintf(stderr, "L%i: can't pint, stack empty\n", line_number);
 		a[2] = "pint_stack_empty";
@@ -124,10 +127,13 @@ void op_pint(stack_t **stack, unsigned int line_number)
 void op_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head, *del;
+	int length;
 
 	head = *stack;
 
-	if ((head) == NULL)
+	length = get_length(head);
+
+	if (length < 1)
 	{
 		fprintf(stderr, "L%i: can't pop an empty stack\n", line_number);
 		a[2] = "pop_stack_empty";

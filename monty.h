@@ -55,6 +55,7 @@ void (*get_op_func())(stack_t **stack, unsigned int line_number);
 int get_int(void);
 void free_list(stack_t *head);
 FILE *input_check(int argc, char **argv);
+int get_length(stack_t *head);
 
 /*operation function prototypes*/
 operation op_push;
@@ -62,5 +63,6 @@ operation op_pall;
 operation op_bad;
 operation op_pint;
 operation op_pop;
+operation op_swap;
 
 #endif
