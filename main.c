@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 	}
 
 	free(line);
+	free_list(head);
 	fclose(stream);
 
 	return (0);

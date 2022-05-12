@@ -49,6 +49,7 @@ typedef void (operation)(stack_t **stack, unsigned int line_number);
 char **reduce_line(char *line);
 void (*get_op_func())(stack_t **stack, unsigned int line_number);
 int get_int();
+void free_list(stack_t *head);
 
 /*operation function prototypes*/
 void op_push(stack_t **stack, unsigned int line_number);

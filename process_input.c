@@ -36,7 +36,10 @@ int get_int()
 	sprintf(test, "%i", val);
 
 	if (strcmp(test, a[1]) == 0)
+	{
+		free(test);
 		return (val);
+	}
 	else
 		a[1][0] = '!';
 
