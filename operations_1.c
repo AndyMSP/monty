@@ -99,8 +99,17 @@ void op_bad(stack_t **stack, unsigned int line_number)
  */
 void op_pint(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	stack_t *head;
 
-	printf("op_point executed\n");
+	head = *stack;
+
+	if ((head) == NULL)
+	{
+		fprintf(stderr, "L%i: can't pint, stack empty\n", line_number);
+		a[2] = "pint_stack_empty";
+		return;
+	}
+
+	printf("%i\n", head->n);
+
 }
