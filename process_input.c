@@ -10,8 +10,6 @@
  */
 char **reduce_line(char *line)
 {
-	a = malloc(sizeof(a) * 3);
-
 	a[0] = strtok(line, " \t\n");
 	a[1] = strtok(NULL, " \t\n");
 	a[2] = NULL;

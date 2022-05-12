@@ -31,6 +31,9 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
+	a = malloc(sizeof(a) * 3);
+	a[2] = NULL;
+
 	i = 0;
 	while ((nread = getline(&line, &len, stream)) != -1)
 	{
@@ -38,12 +41,21 @@ int main(int argc, char **argv)
 		a = reduce_line(line);
 		op = get_op_func();
 		op(&head, i);
-		free(a);
+		if (a[2] != NULL)
+			break;
 	}
 
 	free(line);
 	free_list(head);
 	fclose(stream);
+
+	if (strcmp(a[2], "A") == 0)
+	{
+		free(a);
+		exit(EXIT_FAILURE);
+	}
+
+	free(a);
 
 	return (0);
 }
