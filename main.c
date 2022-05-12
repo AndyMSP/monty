@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 	}
 
 	a = malloc(sizeof(a) * 3);
+
 	a[2] = NULL;
 
 	i = 0;
@@ -49,10 +50,13 @@ int main(int argc, char **argv)
 	free_list(head);
 	fclose(stream);
 
-	if (strcmp(a[2], "A") == 0)
+	if (a[2] != NULL)
 	{
-		free(a);
-		exit(EXIT_FAILURE);
+		if (strcmp(a[2], "A") == 0)
+		{
+			free(a);
+			exit(EXIT_FAILURE);
+		}
 	}
 
 	free(a);
