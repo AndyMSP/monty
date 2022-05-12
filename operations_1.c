@@ -8,7 +8,7 @@
  *
  * Return: no return value
  */
-void op_push(stack_t **head, unsigned int line_number)
+void op_push(stack_t **stack, unsigned int line_number)
 {
 	int n;
 	stack_t *new;
@@ -20,30 +20,35 @@ void op_push(stack_t **head, unsigned int line_number)
 		exit(0);
 	}
 
-	new->next = *head;
-	if (*head != NULL)
+	new->next = *stack;
+	if (*stack != NULL)
 	{
-		(*head)->prev = new;
+		(*stack)->prev = new;
 	}
 
 	n = get_int();
 
 	new->n = n;
-	*head = new;
+	*stack = new;
 	new->prev = NULL;
 }
 
 
 
-
-
-void op_pall(stack_t **head, unsigned int line_number)
+/**
+ * op_pall - prints entire stack
+ * @stack: double pointer to list node
+ * @line_number: line number from monty file
+ *
+ * Return: no return value
+ */
+void op_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node;
 
 	(void)line_number;
 
-	node = *head;
+	node = *stack;
 
 	while (node != NULL)
 	{
@@ -56,7 +61,13 @@ void op_pall(stack_t **head, unsigned int line_number)
 
 
 
-
+/**
+ * op_bad - handles invalid monty command
+ * @stack: double pointer to list node
+ * @line_number: line number from monty file
+ *
+ * Return: no return value
+ */
 void op_bad(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
