@@ -61,5 +61,6 @@ operation op_push;
 operation op_pall;
 operation op_bad;
 operation op_pint;
+operation op_pop;
 
 #endif

@@ -113,3 +113,38 @@ void op_pint(stack_t **stack, unsigned int line_number)
 	printf("%i\n", head->n);
 
 }
+
+/**
+ * op_pop - remove top element from stack
+ * @stack: double pointer to list node
+ * @line_number: line number from monty file
+ *
+ * Return: no return value
+ */
+void op_pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *head, *del;
+
+	head = *stack;
+
+	if ((head) == NULL)
+	{
+		fprintf(stderr, "L%i: can't pop an empty stack\n", line_number);
+		a[2] = "pop_stack_empty";
+		return;
+	}
+	else if (head->next == NULL)
+	{
+		del = head;
+		head = NULL;
+		free(del);
+	}
+	else
+	{
+		del = head;
+		head = del->next;
+		free(del);
+	}
+
+	*stack = head;
+}
