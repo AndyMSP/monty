@@ -71,5 +71,7 @@ void op_pall(stack_t **stack, unsigned int line_number)
 void op_bad(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
-	printf("line %i is bad\n", line_number);
+
+	sprintf(stderr, "L%i: unknown instruction %s\n", line_number, a[0]);
+	a[2] = "bad command";
 }

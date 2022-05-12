@@ -10,10 +10,11 @@
  */
 char **reduce_line(char *line)
 {
-	a = malloc(sizeof(a) * 2);
+	a = malloc(sizeof(a) * 3);
 
 	a[0] = strtok(line, " \t\n");
 	a[1] = strtok(NULL, " \t\n");
+	a[2] = NULL;
 
 	return (a);
 }
@@ -41,7 +42,7 @@ int get_int()
 		return (val);
 	}
 	else
-		a[1][0] = '!';
+		a[2] = "not_int";
 
 	return (0);
 }
