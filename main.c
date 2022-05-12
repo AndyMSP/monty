@@ -40,6 +40,8 @@ int main(int argc, char **argv)
 	{
 		i++;
 		a = reduce_line(line);
+		if (a[0] == NULL)
+			continue;
 		op = get_op_func();
 		op(&head, i);
 		if (a[2] != NULL)
