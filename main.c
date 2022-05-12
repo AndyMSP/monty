@@ -19,9 +19,17 @@ int main(int argc, char **argv)
 	operation *op;
 	stack_t *head = NULL;
 
-	(void)argc;
+	if(argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
 
-	stream = fopen(argv[1], "r");
+	if ((stream = fopen(argv[1], "r")) == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
 
 	i = 0;
 	while ((nread = getline(&line, &len, stream)) != -1)
