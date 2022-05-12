@@ -72,6 +72,6 @@ void op_bad(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 
-	sprintf(stderr, "L%i: unknown instruction %s\n", line_number, a[0]);
+	fprintf(stderr, "L%i: unknown instruction %s\n", line_number, a[0]);
 	a[2] = "bad command";
 }
