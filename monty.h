@@ -57,8 +57,9 @@ void free_list(stack_t *head);
 FILE *input_check(int argc, char **argv);
 
 /*operation function prototypes*/
-void op_push(stack_t **stack, unsigned int line_number);
-void op_pall(stack_t **stack, unsigned int line_number);
-void op_bad(stack_t **stack, unsigned int line_number);
+operation op_push;
+operation op_pall;
+operation op_bad;
+operation op_pint;
 
 #endif

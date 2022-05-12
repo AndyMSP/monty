@@ -88,3 +88,19 @@ void op_bad(stack_t **stack, unsigned int line_number)
 	fprintf(stderr, "L%i: unknown instruction %s\n", line_number, a[0]);
 	a[2] = "bad_instruction";
 }
+
+
+/**
+ * op_pint - prints value at the top of the stack, followed by a new line
+ * @stack: double pointer to list node
+ * @line_number: line number from monty file
+ *
+ * Return: no return value
+ */
+void op_pint(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+	printf("op_point executed\n");
+}
