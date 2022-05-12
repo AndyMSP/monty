@@ -2,8 +2,8 @@
 
 /**
  * main - entry point
- * argc: number of arguments including program call
- * argv: double pointer to char from command line
+ * @argc: number of arguments including program call
+ * @argv: double pointer to char from command line
  *
  * Return: Always 0
  */
@@ -17,13 +17,15 @@ int main(int argc, char **argv)
 	operation *op;
 	stack_t *head = NULL;
 
-	if(argc != 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
-	if ((stream = fopen(argv[1], "r")) == NULL)
+	stream = fopen(argv[1], "r");
+
+	if (stream == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
