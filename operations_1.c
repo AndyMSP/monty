@@ -15,16 +15,24 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	n = get_int();
 
-	if(a[2] != NULL)
+	if (a[2] != NULL)
 	{
-		fprintf(stderr, "L%i: usage: push integer", line_number);
-		return;
+		if (strcmp(a[2], "not_int") == 0)
+		{
+			fprintf(stderr, "L%i: usage: push integer", line_number);
+			return;
+		}
+
+		if (strcmp(a[2], "test malloc failed") == 0)
+			return;
 	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		exit(0);
+		a[2] = "new malloc failed";
+		fprintf(stderr, "Error: malloc failed\n");
+		return;
 	}
 
 	new->next = *stack;

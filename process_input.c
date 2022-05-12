@@ -29,6 +29,11 @@ int get_int()
 	int val;
 
 	test = malloc(sizeof(a[1]));
+	if (test == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		a[2] = "test malloc failed";
+	}
 
 	val = atoi(a[1]);
 

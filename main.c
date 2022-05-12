@@ -32,6 +32,12 @@ int main(int argc, char **argv)
 	}
 
 	a = malloc(sizeof(a) * 3);
+	if (a == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		fclose(stream);
+		exit(EXIT_FAILURE);
+	}
 
 	a[2] = NULL;
 
