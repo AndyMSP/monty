@@ -17,30 +17,9 @@ int main(int argc, char **argv)
 	operation *op;
 	stack_t *head = NULL;
 
-	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-
-	stream = fopen(argv[1], "r");
-
-	if (stream == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
-
-	a = malloc(sizeof(a) * 3);
-	if (a == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		fclose(stream);
-		exit(EXIT_FAILURE);
-	}
+	stream = input_check(argc, argv);
 
 	a[2] = NULL;
-
 	i = 0;
 	while ((nread = getline(&line, &len, stream)) != -1)
 	{
@@ -53,24 +32,19 @@ int main(int argc, char **argv)
 		if (a[2] != NULL)
 			break;
 	}
-
 	if (errno == ENOMEM)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		a[2] = "getline malloc failed";
 	}
-
 	free(line);
 	free_list(head);
 	fclose(stream);
-
 	if (a[2] != NULL)
 	{
 		free(a);
 		exit(EXIT_FAILURE);
 	}
-
 	free(a);
-
 	return (0);
 }

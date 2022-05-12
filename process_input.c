@@ -48,3 +48,37 @@ int get_int(void)
 
 	return (val);
 }
+
+
+/**
+ * input_check - checks if input is valid
+ * @argc: int number of arguments
+ * @argv: double pointer to char
+ *
+ * Return: no return value
+ */
+FILE *input_check(int argc, char **argv)
+{
+	FILE *stream;
+
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	stream = fopen(argv[1], "r");
+	if (stream == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	a = malloc(sizeof(a) * 3);
+	if (a == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		fclose(stream);
+		exit(EXIT_FAILURE);
+	}
+
+	return (stream);
+}

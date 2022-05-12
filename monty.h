@@ -54,6 +54,7 @@ char **reduce_line(char *line);
 void (*get_op_func())(stack_t **stack, unsigned int line_number);
 int get_int(void);
 void free_list(stack_t *head);
+FILE *input_check(int argc, char **argv);
 
 /*operation function prototypes*/
 void op_push(stack_t **stack, unsigned int line_number);
