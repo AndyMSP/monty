@@ -12,7 +12,14 @@ void op_push(stack_t **stack, unsigned int line_number)
 {
 	int n;
 	stack_t *new;
-	(void)line_number;
+
+	n = get_int();
+
+	if(a[2] != NULL)
+	{
+		fprintf(stderr, "L%i: usage: push integer", line_number);
+		return;
+	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
@@ -25,8 +32,6 @@ void op_push(stack_t **stack, unsigned int line_number)
 	{
 		(*stack)->prev = new;
 	}
-
-	n = get_int();
 
 	new->n = n;
 	*stack = new;
@@ -73,5 +78,5 @@ void op_bad(stack_t **stack, unsigned int line_number)
 	(void)stack;
 
 	fprintf(stderr, "L%i: unknown instruction %s\n", line_number, a[0]);
-	a[2] = "A";
+	a[2] = "bad_instruction";
 }

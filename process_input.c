@@ -42,6 +42,8 @@ int get_int()
 	else
 		a[2] = "not_int";
 
+	free(test);
+
 	return (0);
 }
 

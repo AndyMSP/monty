@@ -52,11 +52,8 @@ int main(int argc, char **argv)
 
 	if (a[2] != NULL)
 	{
-		if (strcmp(a[2], "A") == 0)
-		{
-			free(a);
-			exit(EXIT_FAILURE);
-		}
+		free(a);
+		exit(EXIT_FAILURE);
 	}
 
 	free(a);
