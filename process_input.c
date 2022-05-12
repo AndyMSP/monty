@@ -23,6 +23,7 @@ char **reduce_line(char *line)
  *
  * Return: 0 if is int and -1 if not
  */
+/*
 int get_int()
 {
 	char *test;
@@ -50,6 +51,34 @@ int get_int()
 	free(test);
 
 	return (0);
+}
+*/
+
+int get_int()
+{
+	int i, val = 0;
+
+	if (a[1] == NULL)
+	{
+		a[2] = "not_int";
+		return (-1);
+	}
+
+	i = 0;
+	while (a[1][i] != 0)
+	{
+		if((a[1][i] < 48 || a[1][i] > 57) && a[1][i] != '-')
+		{
+			printf("not int check failed\n");
+			a[2] = "not_int";
+			break;
+		}
+		i++;
+	}
+
+	val = atoi(a[1]);
+
+	return (val);
 }
 
 
