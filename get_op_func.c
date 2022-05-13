@@ -23,7 +23,7 @@ void (*get_op_func())(stack_t **stack, unsigned int line_number)
 	};
 
 	if (a[0][0] == '#')
-		return(op_nop);
+		return (op_nop);
 
 
 	num_ops = sizeof(ops) / sizeof(ops[0]);
