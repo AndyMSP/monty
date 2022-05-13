@@ -113,7 +113,7 @@ void op_sub(stack_t **stack, unsigned int line_number)
 
 	n1 = first->n;
 	n2 = second->n;
-	dif = n1 - n2;
+	dif = n2 - n1;
 	second->n = dif;
 
 	op_pop(stack, line_number);
