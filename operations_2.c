@@ -67,3 +67,19 @@ void op_add(stack_t **stack, unsigned int line_number)
 
 	op_pop(stack, line_number);
 }
+
+
+/**
+ * op_nop - does nothing
+ * @stack: double pointer to list node
+ * @line_number: line number from monty file
+ *
+ * Return: no return value
+ */
+void op_nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+	return;
+}

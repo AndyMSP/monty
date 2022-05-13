@@ -65,5 +65,6 @@ operation op_pint;
 operation op_pop;
 operation op_swap;
 operation op_add;
+operation op_nop;
 
 #endif
