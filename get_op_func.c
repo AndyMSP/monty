@@ -16,7 +16,8 @@ void (*get_op_func())(stack_t **stack, unsigned int line_number)
 		{"swap", op_swap},
 		{"add", op_add},
 		{"nop", op_nop},
-		{"sub", op_sub}
+		{"sub", op_sub},
+		{"div", op_div}
 	};
 
 
