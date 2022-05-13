@@ -69,5 +69,6 @@ operation op_nop;
 operation op_sub;
 operation op_div;
 operation op_mul;
+operation op_mod;
 
 #endif
