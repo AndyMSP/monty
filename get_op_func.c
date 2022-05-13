@@ -22,6 +22,9 @@ void (*get_op_func())(stack_t **stack, unsigned int line_number)
 		{"mod", op_mod}
 	};
 
+	if (a[0][0] == '#')
+		return(op_nop);
+
 
 	num_ops = sizeof(ops) / sizeof(ops[0]);
 
