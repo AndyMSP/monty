@@ -18,7 +18,7 @@ void op_swap(stack_t **stack, unsigned int line_number)
 
 	if (length < 2)
 	{
-		fprintf(stderr, "L%i: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%i: can't swap, stack too short\n", line_number);
 		a[2] = "pop_stack_empty";
 		return;
 	}
